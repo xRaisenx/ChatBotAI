@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "app/**",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ],
+  "env": {
+    "VECTOR_URL_BM25": "@vector_url_bm25",
+    "VECTOR_TOKEN_BM25": "@vector_token_bm25",
+    "KV_CHA_KV_REST_API_URL": "@kv_cha_kv_rest_api_url",
+    "KV_CHA_KV_REST_API_TOKEN": "@kv_cha_kv_rest_api_token",
+    "SHOPIFY_STORE_NAME": "@shopify_store_name",
+    "SHOPIFY_STOREFRONT_ACCESS_TOKEN": "@shopify_storefront_access_token",
+    "GEMINI_API_KEY": "@gemini_api_key",
+    "CRON_SECRET": "@cron_secret",
+    "NEXT_PUBLIC_WELCOME_MESSAGE": "@next_public_welcome_message",
+    "MAX_CHAT_HISTORY": "@max_chat_history",
+    "PRODUCT_LIMIT_PER_RESPONSE": "@product_limit_per_response"
+  }
+}
