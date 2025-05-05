@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Added
 - Initial implementation of product card display in chat interface.
+- Added `treeview.md` file containing a file system treeview with descriptions.
 
 ### Changed
 - Modified chat API route (`app/api/chat/route.ts`) to include product card data as JSON within the streamed response.
