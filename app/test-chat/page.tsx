@@ -49,7 +49,7 @@ export default function TestChat() {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Enter your query..."
+            placeholder='Enter your query...'
             className="p-2 border rounded-lg w-full max-w-md text-black dark:text-white dark:bg-gray-700"
           />
           <button

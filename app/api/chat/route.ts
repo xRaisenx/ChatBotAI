@@ -38,19 +38,24 @@ interface ChatApiResponse {
 }
 
 // Type guard to validate ProductVectorMetadata
-function isProductVectorMetadata(metadata: any): metadata is ProductVectorMetadata {
+function isProductVectorMetadata(metadata: unknown): metadata is ProductVectorMetadata {
+    if (typeof metadata !== 'object' || metadata === null) {
+        return false;
+    }
+
+    const potentialMetadata = metadata as { [key: string]: unknown };
+
     return (
-        metadata &&
-        typeof metadata.id === 'string' &&
-        typeof metadata.handle === 'string' &&
-        typeof metadata.title === 'string' &&
-        typeof metadata.price === 'string' &&
-        (metadata.imageUrl === null || typeof metadata.imageUrl === 'string') &&
-        typeof metadata.productUrl === 'string' &&
-        typeof metadata.variantId === 'string' && // Add variantId check
-        (metadata.vendor === undefined || metadata.vendor === null || typeof metadata.vendor === 'string') &&
-        (metadata.productType === undefined || metadata.productType === null || typeof metadata.productType === 'string') &&
-        (metadata.tags === undefined || typeof metadata.tags === 'string')
+        typeof potentialMetadata.id === 'string' &&
+        typeof potentialMetadata.handle === 'string' &&
+        typeof potentialMetadata.title === 'string' &&
+        typeof potentialMetadata.price === 'string' &&
+        (potentialMetadata.imageUrl === null || typeof potentialMetadata.imageUrl === 'string') &&
+        typeof potentialMetadata.productUrl === 'string' &&
+        typeof potentialMetadata.variantId === 'string' &&
+        (potentialMetadata.vendor === undefined || potentialMetadata.vendor === null || typeof potentialMetadata.vendor === 'string') &&
+        (potentialMetadata.productType === undefined || potentialMetadata.productType === null || typeof potentialMetadata.productType === 'string') &&
+        (potentialMetadata.tags === undefined || typeof potentialMetadata.tags === 'string')
     );
 }
 

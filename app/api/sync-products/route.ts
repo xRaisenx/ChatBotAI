@@ -13,7 +13,7 @@ interface ProductVectorMetadata {
   vendor?: string | null;
   productType?: string | null;
   tags?: string;
-  [key: string]: any; // Add index signature
+  [key: string]: unknown; // Add index signature
 }
 
 export async function GET(req: NextRequest) {
